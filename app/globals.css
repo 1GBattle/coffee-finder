@@ -3,14 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --md-font-size: 1rem;
-  --lg-font-size: 1.25rem;
-  --xl-font-size: 1.5rem;
-  --xxl-font-size: 2rem;
-  --xxxl-font-size: 3rem;
+	--md-font-size: 1rem;
+	--lg-font-size: 1.25rem;
+	--xl-font-size: 1.5rem;
+	--xxl-font-size: 2rem;
+	--xxxl-font-size: 3rem;
 }
 
-body, html {
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+body,
+html {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	box-sizing: border-box;
 }
