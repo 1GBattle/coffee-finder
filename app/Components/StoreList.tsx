@@ -1,4 +1,5 @@
 import StoreCard from './StoreCard'
+import { AiOutlineMenuUnfold } from 'react-icons/ai'
 
 export default function StoreList() {
 	const stores = [
@@ -29,7 +30,7 @@ export default function StoreList() {
 	]
 
 	return (
-		<div className='grid grid-cols-2 gap-1'>
+		<div className='grid grid-cols-2 gap-4 p-4'>
 			{stores.map((store) => (
 				<StoreCard />
 			))}
