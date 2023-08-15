@@ -1,7 +1,29 @@
 import StoreCard from './StoreCard'
 import { AiOutlineMenuUnfold } from 'react-icons/ai'
 
-export default function StoreList() {
+async function getData() {
+	try {
+		const res = await fetch(
+			'https://api.foursquare.com/v3/places/search?query=coffee',
+			{
+				headers: {
+					'Content-Type': 'application/json',
+					Authorization: 'fsq33N6bRBjXHooh5UNBtA5648khQ2WpFb1Ro7yGUs+2neg='
+				}
+			}
+		)
+
+		return res.json()
+	} catch (err: any) {
+		throw new Error(err)
+	}
+}
+
+export default async function StoreList() {
+	const data = await getData()
+
+	console.log('data', data)
+
 	const stores = [
 		{
 			name: 'Store 1',

@@ -17,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			<body className={`${inter.className}  flex flex-col`}>
 				<TopBar />
 				{children}
+				<BottomNav />
 			</body>
 		</html>
 	)

@@ -1,3 +1,4 @@
+'use client'
 import { AiOutlineMenuUnfold, AiOutlineSearch } from 'react-icons/ai'
 import Image from 'next/image'
 
@@ -7,9 +8,9 @@ export default function TopBar() {
 			<div className='text-black flex justify-between'>
 				<AiOutlineMenuUnfold className='text-2xl' />
 
-				<div className='flex justify-between gap-5'>
+				{/* <div className='flex justify-between gap-5'>
 					<Image alt='profile picture' src='/logo.png' width={50} height={50} />
-				</div>
+				</div> */}
 			</div>
 
 			<div className='mb-8'>
