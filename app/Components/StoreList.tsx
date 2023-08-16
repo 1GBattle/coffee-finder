@@ -22,8 +22,6 @@ async function getData() {
 export default async function StoreList() {
 	const data = await getData()
 
-	console.log('data', data)
-
 	const stores = [
 		{
 			name: 'Store 1',
@@ -53,9 +51,10 @@ export default async function StoreList() {
 
 	return (
 		<div className='grid grid-cols-2 gap-4 p-4'>
-			{stores.map((store) => (
-				<StoreCard />
-			))}
+			{data.results.map((store: any) => {
+				console.log(store.location)
+				return <StoreCard name={store.name} address={store.location.address} />
+			})}
 		</div>
 	)
 }
