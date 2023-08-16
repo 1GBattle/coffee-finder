@@ -1,10 +1,10 @@
 import StoreCard from './StoreCard'
-import { AiOutlineMenuUnfold } from 'react-icons/ai'
+import { createApi } from 'unsplash-js'
 
 async function getData() {
 	try {
 		const res = await fetch(
-			'https://api.foursquare.com/v3/places/search?query=coffee',
+			'https://api.foursquare.com/v3/places/search?query=coffee&limit=25',
 			{
 				headers: {
 					'Content-Type': 'application/json',
@@ -13,46 +13,20 @@ async function getData() {
 			}
 		)
 
-		return res.json()
+		const data = (await res.json()) as { results: any[] }
+
+		return { data }
 	} catch (err: any) {
 		throw new Error(err)
 	}
 }
 
 export default async function StoreList() {
-	const data = await getData()
-
-	const stores = [
-		{
-			name: 'Store 1',
-			address: 'Address 1'
-		},
-		{
-			name: 'Store 2',
-			address: 'Address 2'
-		},
-		{
-			name: 'Store 3',
-			address: 'Address 3'
-		},
-		{
-			name: 'Store 1',
-			address: 'Address 1'
-		},
-		{
-			name: 'Store 2',
-			address: 'Address 2'
-		},
-		{
-			name: 'Store 3',
-			address: 'Address 3'
-		}
-	]
+	const { data } = await getData()
 
 	return (
 		<div className='grid grid-cols-2 gap-4 p-4'>
 			{data.results.map((store: any) => {
-				console.log(store.location)
 				return <StoreCard name={store.name} address={store.location.address} />
 			})}
 		</div>
