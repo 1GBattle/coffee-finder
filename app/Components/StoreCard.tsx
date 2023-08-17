@@ -6,41 +6,24 @@ import { createApi } from 'unsplash-js'
 interface Props {
 	name: string
 	address: string
+	photo: string
 }
 
-async function getPhoto() {
-	const unsplash = createApi({
-		accessKey: 'RjIuJSEzsl8xpKWLCVcO0hN7DZOfT7nP6WcxducijgE'
-	})
-
-	const photo = await unsplash.photos
-		.getRandom({ query: 'coffee shop' })
-		.then((result) => {
-			if (result.errors) {
-				throw new Error('error occurred getting random photo')
-			}
-
-			return result.response as { urls: { full: string } }
-		})
-
-	return photo
-}
-
-export default async function StoreCard({ name, address }: Props) {
-	const photo = await getPhoto()
-
+export default async function StoreCard({ name, address, photo }: Props) {
 	return (
 		<Link
 			href={'/'}
-			className='store-card cursor-pointer rounded shadow-lg bg-white h-80'>
+			className='store-card cursor-pointer rounded shadow-lg bg-white h-64'>
 			<div className='flex justify-center p-0 w-full h-3/5 rounded'>
-				<Image
-					className='w-full h-full'
-					alt='Coffee Store'
-					src={photo.urls.full}
-					width={150}
-					height={250}
-				/>
+				{photo && (
+					<Image
+						className='w-full h-full rounded'
+						alt='Coffee Store'
+						src={photo}
+						width={150}
+						height={250}
+					/>
+				)}
 			</div>
 
 			<div className='w-full flex gap-1 p-3 justify-around flex-col h-2/5 '>
