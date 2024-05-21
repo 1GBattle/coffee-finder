@@ -8,9 +8,17 @@
 	}
 </script>
 
-<Carousel bind:this={carousel} let:loaded autoplay autoplayDuration={3000} autoplayProgressVisible>
+<Carousel
+	bind:this={carousel}
+	let:loaded
+	autoplay
+	autoplayDuration={2000}
+	autoplayProgressVisible={false}
+	swiping
+	arrows={false}
+>
 	{#each photos as photo, imageIndex (photo)}
-		<div>
+		<div class="h-86 max-h-86 p-4">
 			{#if loaded.includes(imageIndex)}
 				<img
 					src={photo.prefix + 'original' + photo.suffix}
