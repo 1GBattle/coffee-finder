@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { coffeeShopStore } from '$lib/stores/coffeeShopStore'
-	// import PhotoCarousel from '$lib/Components/PhotoCarousel.svelte'
+	import PhotoCarousel from '$lib/Components/PhotoCarousel.svelte'
 	import StarRating from 'svelte-star-rating'
 	import Icon from '@iconify/svelte'
 
@@ -21,7 +21,7 @@
 	</div>
 
 	<div class="h-full flex flex-col items-center gap-2 p-1">
-		<!-- <PhotoCarousel photos={coffeeStore.photos} /> -->
+		<PhotoCarousel photos={coffeeStore.photos} />
 
 		<div class="flex flex-col items-center gap-4">
 			<h1 class="font-semibold text-3xl text-center">{coffeeStore?.name}</h1>
