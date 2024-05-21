@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { coffeeShopStore } from '$lib/stores/coffeeShopStore'
-	import PhotoCarousel from '$lib/Components/photoCarousel.svelte'
+	import PhotoCarousel from '$lib/Components/PhotoCarousel.svelte'
 	import StarRating from 'svelte-star-rating'
 	import Icon from '@iconify/svelte'
 

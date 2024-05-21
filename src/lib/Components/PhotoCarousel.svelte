@@ -1,11 +1,10 @@
 <script lang="ts">
+	//@ts-ignore
 	import Carousel from 'svelte-carousel'
+
 	export let photos: [{ prefix: String; suffix: String }]
 
-	let carousel // for calling methods of the carousel instance
-	const handleNextClick = () => {
-		carousel.goToNext()
-	}
+	let carousel: any // for calling methods of the carousel instance
 </script>
 
 <Carousel
