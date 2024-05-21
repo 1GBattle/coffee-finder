@@ -55,4 +55,8 @@
 		left: 0.25rem;
 		top: 0.5rem;
 	}
+
+	.back-icon-div {
+		position: absolute;
+	}
 </style>
